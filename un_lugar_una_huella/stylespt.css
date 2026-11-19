@@ -1,0 +1,320 @@
+
+:root {
+    --color-principal: #71866a;
+    --color-principal-oscuro: #50664c;
+    --color-secundario: #e8ede2;
+    --color-fondo: #f8f6f0;
+    --color-tarjeta: #ffffff;
+    --color-acento: #bd795b;
+    --color-acento-oscuro: #9d5d43;
+    --color-texto: #303b32;
+    --color-texto-suave: #72796f;
+    --color-borde: #e5e4d9;
+
+    --sombra: 0 12px 35px rgba(48, 59, 50, .09);
+    --radio: 22px;
+    --ancho: 1200px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.encabezado {
+    min-height: 85px;
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: var(--color-tarjeta);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .05);
+}
+
+.encabezado__logo-contenedor {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.encabezado__logo-imagen {
+    width: 100%;
+    height: 58px;
+    object-fit: contain;
+}
+
+.encabezado__navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.encabezado__enlace {
+    color: var(--color-texto);
+    font-size: .88rem;
+    font-weight: 600;
+    transition: color .25s;
+}
+
+.encabezado__enlace:hover {
+    color: var(--color-acento);
+}
+
+.seccion__encabezado {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.seccion__etiqueta {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--color-acento);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.seccion__titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--color-texto);
+    margin-bottom: 16px;
+}
+
+.seccion__descripcion {
+    color: var(--color-texto-suave);
+    font-size: 1rem;
+}
+
+
+.portada {
+    min-height: 650px;
+    padding: 100px 9%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 35, 27, .83) 0%,
+            rgba(25, 35, 27, .58) 55%,
+            rgba(25, 35, 27, .15) 100%
+        ),
+        url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=2000&q=90');
+    background-size: cover;
+    background-position: center 45%;
+    color: white;
+}
+
+.portada__contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.portada__etiqueta {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 9px 17px;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 30px;
+    color: #ffffff;
+    background: rgba(255,255,255,.12);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.portada__titulo {
+    max-width: 750px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.7rem, 5.5vw, 4.8rem);
+    line-height: 1.13;
+    margin-bottom: 25px;
+}
+
+.portada__titulo span {
+    display: block;
+    color: #d9c8a5;
+}
+
+.portada__descripcion {
+    max-width: 620px;
+    color: rgba(255,255,255,.9);
+    font-size: 1.08rem;
+    margin-bottom: 32px;
+}
+
+.portada__botones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.portada__boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 35px;
+    background: var(--color-acento);
+    color: white;
+    font-weight: 800;
+    transition: background .25s, transform .25s;
+}
+
+.portada__boton:hover {
+    background: var(--color-acento-oscuro);
+    transform: translateY(-4px);
+}
+
+.portada__enlace {
+    padding: 12px;
+    color: white;
+    font-weight: 700;
+}
+
+.portada__enlace:hover {
+    text-decoration: underline;
+}
+
+.bienvenida {
+    max-width: var(--ancho);
+    margin: auto;
+    padding: 110px 7%;
+    text-align: center;
+}
+
+.bienvenida__contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.bienvenida__titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+.bienvenida__descripcion {
+    color: var(--color-texto-suave);
+    font-size: 1.05rem;
+}
+
+
+
+.categorias {
+    padding: 90px 7%;
+    background:
+        linear-gradient(rgba(232,237,226,.94), rgba(232,237,226,.94)),
+        url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.categorias__lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.categorias__boton {
+    padding: 12px 27px;
+    border: 1px solid var(--color-principal);
+    border-radius: 30px;
+    background: rgba(255,255,255,.75);
+    color: var(--color-principal-oscuro);
+    font-weight: 700;
+    transition: all .25s;
+}
+
+.categorias__boton:hover {
+    background: var(--color-principal);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.adopcion {
+    padding: 100px 7%;
+    text-align: center;
+    background: var(--color-fondo);
+}
+
+.adopcion__lista-animales {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px 25px;
+    border-radius: var(--radio);
+    background: var(--color-tarjeta);
+    color: var(--color-texto-suave);
+    box-shadow: var(--sombra);
+    font-size: 1.05rem;
+}
+
+.nosotros {
+    padding: 100px 7%;
+    background: var(--color-secundario);
+    text-align: center;
+}
+
+.nosotros__contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.nosotros__contenido p {
+    margin-top: 15px;
+    color: var(--color-texto-suave);
+    font-size: 1.05rem;
+}
+
+
+.pie-pagina {
+    padding: 65px 7%;
+    background: #28392c;
+    color: white;
+    text-align: center;
+}
+
+.pie-pagina p + p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .75);
+    font-size: .9rem;
+}
